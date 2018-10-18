@@ -18,7 +18,7 @@ func Fetch(url string)([]byte,error) {
 		return nil,err
 	}
 	defer resp.Body.Close()
-	if resp.StatusCode == http.StatusOK {
+	if resp.StatusCode != http.StatusOK {
 		return nil,fmt.Errorf("wrong status:%d",resp.StatusCode)
 	}
 	encode := determineEncod(resp.Body)
