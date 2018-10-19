@@ -6,8 +6,9 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+
 	"golang.org/x/net/html/charset"
-	encoding "golang.org/x/text/encoding"
+	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"golang.org/x/text/transform"
 )

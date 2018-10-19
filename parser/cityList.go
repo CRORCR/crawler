@@ -12,11 +12,16 @@ func ParseCityList(contents []byte)engine.ParseResult{
 	matchs := re.FindAllSubmatch(contents, -1)
 
 	result:=engine.ParseResult{}
+	limit:=10
 	for _,v:=range matchs{
 		result.Items=append(result.Items,string(v[2]))
 		result.Requests=
-			append(result.Requests,engine.Request{string(v[1]),engine.NilParse})
-		//fmt.Printf("Url:%s City:%s\n",v[1],v[2])
+			append(result.Requests,engine.Request{string(v[1]),ParseCity})
+			//log.Println(	"Url:%s City:%s\n",string(v[1]),string(v[2]))
+			limit--
+			if limit==0{
+				break
+			}
 	}
 	return result
 }

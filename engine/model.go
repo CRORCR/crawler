@@ -13,3 +13,14 @@ type ParseResult struct {
 func NilParse([]byte)ParseResult{
 	return ParseResult{}
 }
+
+type User struct {
+	Name string
+	Age string
+	High string
+	Income string //收入
+	Marriage string
+	Record string //学历
+	Work string //职业
+	Address string //地址
+}
